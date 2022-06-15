@@ -1,16 +1,11 @@
 const express = require('express');
+const { getAllProducts, createProduct, uploadImage } = require('../controller/productController');
 const router = express.Router();
 
-router.get('/', (req,res)=>{
-  res.send("getAll products");
-});
+router.get('/', getAllProducts);
 
-router.post('/', (req,res)=>{
-  res.send('hello from createProduct');
-});
+router.post('/', createProduct);
 
-router.post('/uploads', (req, res)=>{
-  res.send("hrllo from uploads");
-})
+router.post('/uploads', uploadImage)
 
 module.exports = router;
